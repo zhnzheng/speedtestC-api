@@ -1,0 +1,73 @@
+#
+# For a description of the syntax of this configuration file,
+# see Documentation/kbuild/kconfig-language.txt.
+#
+
+#comment "Architecture Configuration"
+
+choice
+	prompt "Architecture"
+	help
+		Select Architecture
+	config ARM_ARCH
+		bool "arm"
+		help
+			ARM Architecture
+    config LINUX_X86_64
+		bool "linux_x86_64"
+		help
+			Linux x86_64 Architecture
+endchoice
+
+#comment "Chip Configuration"
+
+menu "Chip Type"
+    choice
+        prompt "Chip Type"
+        depends on ARM_ARCH
+        help
+            Select Hisilicon Chip series
+        config RTL8197FH
+            bool "RTL8197FH"
+            help
+                28nm, MIPS 24Kc, 1GHz
+        config HI3556V100
+            bool "Hi3556v100"
+            help
+                CPU is Dual Core Cortex A53 and Cortex A53
+        config HI3559V200
+            bool "Hi3559v200"
+            help
+                CPU is Dual Core Cortex A7 and Cortex A7
+        config SSC325
+            bool "SSC325"
+            help
+                CPU is Single Core Cortex A7
+    endchoice
+endmenu
+
+menu "ToolChain"
+	choice
+		prompt "Linux"
+		depends on RTL8197FH || HI3559V100 || HI3556V100 || HI3559V200 || HI3556V200 || SSC325
+		config LINUX_CROSS_MSDK
+			bool "msdk-linux"
+			depends on RTL8197FH
+		config LINUX_CROSS_HISIV600
+			bool "arm-hisiv600-linux"
+			depends on HI3559V100 || HI3556V100
+		config LINUX_CROSS_HIMIX100
+			bool "arm-himix100-linux"
+			depends on HI3559V200 || HI3556V200
+		config LINUX_CROSS_UCLIBC_HARD_FLOAT
+			bool "arm-buildroot-linux-uclibcgnueabihf"
+			depends on SSC325
+	endchoice
+    choice
+		prompt "GNU"
+		depends on LINUX_X86 || LINUX_X86_64
+        config LINUX_CROSS_GNU
+			bool "gnu"
+			depends on LINUX_X86 || LINUX_X86_64
+	endchoice
+endmenu

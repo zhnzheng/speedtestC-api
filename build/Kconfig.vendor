@@ -1,0 +1,33 @@
+#
+# For a description of the syntax of this configuration file,
+# see Documentation/kbuild/kconfig-language.txt.
+#
+
+#comment "Vendor Configuration"
+
+choice
+	prompt "Vendor"
+	help
+		Select Vendor
+	config OVERSEAS_LIDL
+		bool "Overseas Lidl"
+		help
+			Overseas Lidl
+	config SICHUAN_CT_MOJING
+		bool "Sichuan CT Mojing"
+		help
+			China Telecom Sichuan Mojing
+	config HUNAN_GUANGYUAN
+		bool "Hunan GuangYuan"
+		help
+			HuNan GuangYuan PQTEC
+	config BEIJING_CETC
+		bool "Beijing CECT"
+		help
+			China Electronics Technology Group Corporation
+    config SICHUAN_CMCC
+		bool "Sichuan cmcc"
+		help
+			China Mobile Communications Group Co.,Ltd 
+endchoice
+

@@ -1,0 +1,13 @@
+# Modify by MiaoJian.Zheng
+# Date : 2021-02-22
+
+# configure file
+.config
+.config.old
+build/scripts/kconfig
+
+# open-source
+openssl-1.0.2q
+
+# out file or directory
+output
