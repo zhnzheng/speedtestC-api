@@ -1,8 +1,3 @@
-/*
-    Client configuration parsing functions.
-
-    Michał Obrembski (byku@byku.com.pl)
-*/
 #include "SpeedtestConfig.h"
 #include "http.h"
 #include "url.h"

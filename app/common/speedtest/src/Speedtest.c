@@ -1,8 +1,8 @@
-/*
-	Main program.
-
-	Michał Obrembski (byku@byku.com.pl)
-*/
+/***********************************************************
+*  File: Speedtest.c
+*  Author: MiaoJian.Zheng
+*  Date: 2021-02-23
+***********************************************************/
 #include "http.h"
 #include "SpeedtestConfig.h"
 #include "SpeedtestServers.h"
@@ -830,11 +830,6 @@ void paramInit(void)
     speedTestProgress = 0;
 #endif
 
-#ifdef OPENSSL
-	printf("zhn1111\n");
-#else
-	printf("zhn2222\n");
-#endif
     return ;
 }
 

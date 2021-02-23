@@ -1,8 +1,3 @@
-/*
-    Server list parsing functions.
-
-    Michał Obrembski (byku@byku.com.pl)
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

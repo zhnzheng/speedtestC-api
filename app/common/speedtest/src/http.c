@@ -1,9 +1,3 @@
-/*
-    Http functions. Dont forget to initialize winsock.
-
-    Luke Graham (39ster@gmail.com)
-    Michał Obrembski (byku@byku.com.pl)
- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <netdb.h>
